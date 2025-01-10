@@ -26,7 +26,7 @@ const SetMenusPage = () => {
     dispatch(incrementPage());
     dispatch(fetchMenus({ page: page + 1, cuisineSlug: selectedCuisine }));
   };
-
+  
   return (
     <div className="page-container">
       <div className="guests-container">

@@ -5,7 +5,7 @@ import API_BASE_URL from "../config";
 export const fetchMenus = createAsyncThunk(
   "menus/fetchMenus",
   async ({ page, cuisineSlug }, { getState, rejectWithValue }) => {
-    const { guests } = getState().menus; // Access guests from Redux state
+    const { guests } = getState().menus;
     try {
       const response = await fetch(
         `${API_BASE_URL}/api/set-menus?page=${page}&per_page=6&cuisineSlug=${cuisineSlug}`
@@ -19,7 +19,6 @@ export const fetchMenus = createAsyncThunk(
   }
 );
 
-// Fetch Cuisines
 export const fetchCuisines = createAsyncThunk(
   "menus/fetchCuisines",
   async (_, { rejectWithValue }) => {
@@ -32,13 +31,14 @@ export const fetchCuisines = createAsyncThunk(
     }
   }
 );
+
 const menusSlice = createSlice({
   name: "menus",
   initialState: {
     menus: [],
     cuisines: [],
     selectedCuisine: "",
-    guests: 10, // Default guest count
+    guests: 10,
     page: 1,
     totalMenus: 0,
     loading: false,
@@ -46,7 +46,7 @@ const menusSlice = createSlice({
   },
   reducers: {
     setGuests(state, action) {
-      state.guests = action.payload; // Update guests in the global state
+      state.guests = action.payload;
     },
     setSelectedCuisine(state, action) {
       state.selectedCuisine = action.payload;
@@ -64,7 +64,17 @@ const menusSlice = createSlice({
       })
       .addCase(fetchMenus.fulfilled, (state, action) => {
         const { menus, total } = action.payload;
-        state.menus = state.page === 1 ? menus : [...state.menus, ...menus];
+
+        // Prevent duplicates
+        const newMenus = menus.filter(
+          (menu) => !state.menus.some((existing) => existing.id === menu.id)
+        );
+
+        // Append new menus at the top
+        state.menus = state.page === 1
+          ? menus
+          : [...newMenus, ...state.menus];
+
         state.totalMenus = total;
         state.loading = false;
       })
