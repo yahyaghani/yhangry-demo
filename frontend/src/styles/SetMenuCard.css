@@ -1,0 +1,70 @@
+.set-menu-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.menu-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 15px 15px 0 0;
+}
+
+.caption {
+  padding: 12px;
+  text-align: left; /* Align text to the left */
+  line-height: 1.1; /* Reduce line spacing */
+}
+
+.cuisine-tag {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: #19385b;
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 12px;
+  /* margin-bottom: 8px; */
+  cursor: default;
+  margin-bottom: 2px; /* Add space below the cuisine tag */
+
+}
+
+.priceperperson-tag {
+  display: inline-block; /* Ensure each tag appears on its own line */
+  padding: 5px 10px;
+  background-color: #d76055;
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 12px;
+  margin-top: 5px; 
+  cursor: default;
+  margin-left:5px;
+}
+.menu-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 4px;
+  color: #333;
+}
+
+.menu-description {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+.menu-price,
+.menu-total {
+  font-size: 0.95rem;
+  color: #0b2138;
+  margin-top: 2px;
+}

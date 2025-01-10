@@ -1,0 +1,58 @@
+/* styles/Filters.css */
+.filters {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap; /* Allow buttons to wrap for smaller screens */
+  justify-content: center; /* Center align filters on smaller screens */
+}
+
+.filter-btn {
+  padding: 8px 16px;
+  border: 1px solid #ddd;
+  border-radius: 25px; /* Rounded corners */
+  background-color: #ecd8c7;
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  text-align: center;
+  /* border-color: #f0ceb2; */
+
+
+}
+
+.filter-btn.active {
+  background-color: #19385b;
+  color: #fff;
+  border-color: #f0ceb2;
+}
+
+.filter-btn:hover {
+  background-color: #19385b;
+  color: #fff;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .filters {
+    gap: 8px; /* Reduce spacing on smaller screens */
+  }
+
+  .filter-btn {
+    font-size: 0.9rem; /* Slightly smaller text for mobile */
+    padding: 6px 12px; /* Adjust padding for compact layout */
+  }
+}
+
+@media (max-width: 480px) {
+  .filters {
+    flex-direction: row; /* Stack filters vertically on very small screens */
+    align-items: center; /* Center align filters */
+  }
+
+  .filter-btn {
+    font-size: 0.85rem; /* Further reduce font size for very small screens */
+    /* padding: 6px 10px; */
+    color:#0f1122;
+  }
+}

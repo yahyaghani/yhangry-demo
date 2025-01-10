@@ -1,0 +1,95 @@
+/* General Page Container */
+.page-container {
+  margin: 20px; /* 20px margin on all sides */
+  padding: 20px; /* Padding inside the container */
+  box-sizing: border-box; /* Ensure padding is included in width calculations */
+  width: calc(100% - 40px); /* Full width minus margin */
+}
+
+@media (max-width: 768px) {
+  .page-container {
+    margin: 0; /* Remove margin for mobile view */
+    padding: 0; /* Remove padding for mobile view */
+    width: 100%; /* Full width for mobile */
+  }
+}
+
+/* Page Layout */
+.set-menus-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.set-menus-page h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 28px;
+  color: #333;
+}
+
+/* Guests Section */
+.guests-container {
+  display: flex;
+  flex-direction: column; /* Arrange items vertically */
+  align-items: center; /* Center align horizontally */
+  gap: 10px; /* Add spacing between elements */
+  margin-bottom: 20px; /* Add spacing from the rest of the page */
+}
+
+.guests-label {
+  font-size: 24px; /* Adjust size as needed */
+  font-weight: bold;
+  margin: 0;
+  color: #f95738;
+}
+
+.quantity-wrapper {
+  display: flex;
+  justify-content: center; /* Ensure QuantityInput is centered */
+  width: 100%;
+}
+
+/* Pagination Section */
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  position: sticky; /* Stick the load more button */
+  bottom: 0px; /* Keep it visible at the bottom */
+  background: #f9f9f9;
+  padding: 10px 0; /* Add some padding for better spacing */
+  z-index: 10; /* Ensure it stays above other content */
+}
+
+/* Utility Classes */
+.centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-bold {
+  font-weight: bold;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .set-menus-page h1 {
+    font-size: 22px;
+    margin-bottom: 15px;
+  }
+
+  .pagination-container {
+    background: #fff; /* Make background white for better visibility */
+  }
+}
+
+@media (max-width: 480px) {
+  .guests-label {
+    font-size: 20px; /* Slightly reduce font size for very small screens */
+  }
+
+  .pagination-container {
+    padding: 8px 0;
+  }
+}

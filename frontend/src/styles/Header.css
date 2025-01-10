@@ -1,0 +1,179 @@
+/* =========================
+   Header.css
+   ========================= */
+
+/* 1) Wrapper Header */
+.header {
+    width: 100%;
+    background-color: #fff;
+    border-bottom: 1px solid #E6E9F0;
+}
+
+/* 2) Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 16px; /* Horizontal padding */
+}
+
+/* 3) Navbar */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+    gap: 20px;
+}
+
+/* 4) Navbar Left (Logo) */
+.navbar-left {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.navbar-brand {
+    display: inline-block;
+    text-decoration: none;
+}
+
+.logo {
+    height: 24px; /* Adjust as needed */
+    width: auto;
+    display: block;
+}
+
+/* 5) Navbar Center (Menu) */
+.navbar-center {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    justify-content: center;
+}
+
+.menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 24px; /* Spacing between menu items */
+}
+
+.menu-item {
+    text-decoration: none;
+    color: #1d1d35;
+    font-weight: 700;
+    text-transform: none; /* Use uppercase if needed */
+}
+
+.menu-item:hover {
+    color: #f95738; /* Hover color */
+}
+
+/* 6) Navbar Right (Buttons) */
+.navbar-right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 16px;
+}
+
+/* Basic button styling */
+.btn {
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Dark button */
+.btn-dark {
+    color: #1d1d35;
+    background-color: transparent;
+    border: 1px solid #1d1d35;
+    border-radius: 5px;
+}
+
+.btn-dark:hover {
+    background-color: #0f0f1c; /* Slightly darker on hover */
+    color: #fff;
+}
+
+/* Primary button */
+.btn-primary {
+    color: #fff;
+    background-color: #f95738; /* Bright orange */
+    border: 1px solid #f95738;
+}
+
+.btn-primary:hover {
+    background-color: #ed2e07; /* Darker orange on hover */
+}
+
+/* Extra small button for mobile */
+.btn-xs, .btn--xs {
+    padding: 8px 14px;
+    font-size: 0.875rem;
+    line-height: unset;
+    border-radius: 8px;
+}
+
+/* =========================
+   Mobile Adjustments
+   ========================= */
+@media (max-width: 768px) {
+    /* Navbar layout changes */
+    .navbar {
+        flex-direction: row;
+        justify-content: space-between;
+        height: auto;
+        gap: 13px;
+        /* padding: 4px 16px; */
+        padding:1px 1px;
+    }
+
+    /* Hide the center menu items */
+    .navbar-center {
+        display: none; /* Menu items hidden in mobile */
+    }
+
+    /* Logo alignment */
+    .navbar-left {
+        flex: 1;
+        justify-content: flex-start;
+    }
+
+    /* Buttons alignment */
+    .navbar-right {
+        flex: 1;
+        justify-content: flex-end;
+    }
+
+    /* Use extra small buttons in mobile */
+    .btn {
+        padding: 6px 12px; /* Reduced padding for smaller buttons */
+    }
+
+    .btn-primary.btn-xs,
+    .btn-dark.btn-xs {
+        font-size: 0.875rem; /* Adjust font size */
+    }
+
+    .logo {
+        height: 40px;
+        width: auto;
+      }
+      
+      @media (max-width: 768px) {
+        .logo {
+          height: 24px;
+        }
+      }
+      
+
+
+}

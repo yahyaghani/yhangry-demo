@@ -1,0 +1,54 @@
+.quantity-input {
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    /* box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); */
+    border-radius: 3px;
+    border: 0 solid #ffcda3;
+
+  }
+  
+  .quantity-input__modifier,
+  .quantity-input__screen {
+    user-select: none;
+    outline: none;
+    background: #ffcda3;
+    color: white;;
+  }
+  
+  .quantity-input__modifier {
+    padding: 0.7rem;
+    width: 3rem;
+    font-size: 1.5rem;
+    background: #e2dad4;
+    color: #ffffff;
+    border: 0 solid #ffcda3;
+    text-align: center;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    &:hover {
+      background: #e0e0e0; /* Slightly darker background */
+      color: #666; /* Darker text color */
+    }
+  
+    &--left {
+      border-radius: 3px 0 0 3px;
+    }
+  
+    &--right {
+      border-radius: 0 3px 3px 0;
+    }
+  }
+  
+  .quantity-input__screen {
+    width: 4rem;
+    padding: 0.7rem;
+    font-size: 1.5rem;
+  
+    border: 0;
+    border-top: 0 solid #dbdbdb;
+    border-bottom: 0 solid #dbdbdb;
+    text-align: center;
+  }
+  
+  /* O
