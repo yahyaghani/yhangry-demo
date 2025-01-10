@@ -1,4 +1,3 @@
-```markdown
 # Backend Project (Flask) README
 
 This repository contains the backend API for a web application that displays set menus, allows filtering by cuisine, and handles pagination.  It's built using Flask, SQLAlchemy for database interaction, and Flask-Limiter for rate limiting.  This README will help you understand how to run and use the API.
