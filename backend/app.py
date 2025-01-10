@@ -21,7 +21,7 @@ CORS(app)
 limiter = Limiter(
     get_remote_address,
     app=app,
-    default_limits=["1 per second"],  # Default rate limit for all routes
+    default_limits=["1 per second"],  # Enforcing API rate limit
 )
 
 # Database Initialization
@@ -67,17 +67,23 @@ def harvest_data():
     else:
         print("Failed to fetch data from API.")
 
-# Before and After Request Hooks for Logging Response Time
+# Start timer before every request
 @app.before_request
 def start_timer():
-    g.start_time = time.time()
+    g.start_time = time.perf_counter()  # High precision timer
 
+# Log response time after every request
 @app.after_request
 def log_response_time(response):
     if hasattr(g, 'start_time'):
-        end_time = time.time()
-        response_time_ms = (end_time - g.start_time) * 1000
-        print(f"Request to {request.path} took {response_time_ms:.2f} ms")
+        end_time = time.perf_counter()
+        response_time_ms = (end_time - g.start_time) * 1000  # Convert to milliseconds
+
+        if response_time_ms > 100:
+            print(f"[WARNING] Request to {request.path} took {response_time_ms:.2f} ms (Exceeds 100ms limit)")
+        else:
+            print(f"[INFO] Request to {request.path} completed in {response_time_ms:.2f} ms")
+
     return response
 
 # API to Get Set Menus
