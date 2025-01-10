@@ -1,4 +1,3 @@
-```markdown
 # Yhangry- Frontend README
 
 This repository contains the frontend code for a web application.  The application displays set menus, allows filtering by cuisine, and handles pagination. It utilizes Vite for development, React for the UI, and Redux Toolkit for state management.
